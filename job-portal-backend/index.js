@@ -4,12 +4,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
-
+const path = require("path");
 dotenv.config();
 
 const authRoutes = require("./routes/auth");
 const jobRoutes = require("./routes/jobs");
 
+const __dirname = path.resolve();
 const app = express();
 
 // Middleware
@@ -40,3 +41,11 @@ app.get("/", (req, res) => {
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.use(express.static(path.join(__dirname, "/job-portal-frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "job-portal-frontend", "dist", "index.html")
+  );
+});
