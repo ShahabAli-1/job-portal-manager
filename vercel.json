@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd client && npm install && ./node_modules/vite/bin/vite.js build",
+  "outputDirectory": "job-portal-frontend/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/job-portal-backend/index.js"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
