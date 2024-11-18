@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd client && npm install && ./node_modules/vite/bin/vite.js build",
+  "buildCommand": "cd job-portal-frontend && npm install && ./node_modules/vite/bin/vite.js build",
   "outputDirectory": "job-portal-frontend/dist",
   "framework": "vite",
   "rewrites": [
