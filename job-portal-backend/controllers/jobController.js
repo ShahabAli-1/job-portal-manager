@@ -10,11 +10,9 @@ exports.createJob = async (req, res) => {
       location,
       postedBy: req.user,
     });
-    // const job = await newJob.save();
     const savedJob = await newJob.save();
     const populatedJob = await savedJob.populate("postedBy", "username email");
     res.status(201).json(populatedJob);
-    // res.status(201).json(job);
   } catch (err) {
     res.status(500).json({ msg: "Server error" });
   }
@@ -44,7 +42,6 @@ exports.updateJob = async (req, res) => {
     job.company = company || job.company;
     job.location = location || job.location;
 
-    // await job.save();
     const updatedJob = await job.save();
     const populatedUpdatedJob = await updatedJob.populate(
       "postedBy",

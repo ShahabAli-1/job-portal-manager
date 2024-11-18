@@ -1,4 +1,3 @@
-// src/components/Jobs/CreateJobModal.jsx
 import React, { useState } from "react";
 import {
   Modal,

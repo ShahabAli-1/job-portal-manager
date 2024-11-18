@@ -1,4 +1,3 @@
-// src/components/Auth/Register.jsx
 import React, { useState, useContext } from "react";
 import { TextField, Button, Typography, Box, Link } from "@mui/material";
 import axios from "axios";

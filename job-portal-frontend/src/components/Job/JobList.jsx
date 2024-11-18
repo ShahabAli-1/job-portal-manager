@@ -1,4 +1,3 @@
-// src/components/Jobs/JobList.jsx
 import React, { useState, useEffect, useContext } from "react";
 import {
   Grid,

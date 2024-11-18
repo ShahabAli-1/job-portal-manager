@@ -1,4 +1,3 @@
-// src/components/Jobs/JobCard.jsx
 import React, { useContext, useState } from "react";
 import {
   Accordion,
